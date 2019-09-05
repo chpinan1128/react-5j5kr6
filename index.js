@@ -3,8 +3,8 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import { render } from 'react-dom';
 import FontSwitcher from './FontSwitcher';
 import Menu from './Menu';
-import { theme as defaultTheme } from './theme'
-import Hello from './Hello';
+import { theme as defaultTheme, fontSizes } from './theme'
+import Others from './Others';
 import './style.scss';
 
 const AppContainer = styled.div`
@@ -29,15 +29,23 @@ class App extends React.Component {
     this.setState({ size });
   };
 
-  render() {
+  get theme() {
     const { size } = this.state;
-    const theme = { ...defaultTheme, respondTo: this.respondTo, size };
+    const theme = { ...defaultTheme, respondTo: this.respondTo, size, ...fontSizes };
+    Object.keys(fontSizes).forEach(key => {
+      theme[key] = fontSizes[key] * size;
+    })
 
+    return theme;
+  }
+
+  render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={this.theme}>
         <AppContainer>
           <Menu />
           <FontSwitcher switchFontSize={this.switchFontSize} />
+          <Others />
         </AppContainer>
       </ThemeProvider>
     );

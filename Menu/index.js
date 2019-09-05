@@ -21,6 +21,7 @@ const MenuContainer = styled.div`
     theme.respondTo &&
     theme.respondTo`
 		display: block;
+    background: lightgreen
 	`};
 `;
 

@@ -8,6 +8,6 @@ export const MenuItem = styled.div`
   ${({ theme }) =>
     theme.respondTo &&
     theme.respondTo`
-		font-size: ${theme.fontSize * theme.size || 1}px;
+		font-size: ${theme.fontSize}px;
 	`};
 `;

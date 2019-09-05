@@ -8,7 +8,7 @@ export const breakpoints = {
 
 export const fontSizes = {
   fontSize: 12,
-  switcherFontSize: 18,
+  switcherFontSize: 12,
   size1: 24,
   size2: 18,
   size3: 12,

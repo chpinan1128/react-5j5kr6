@@ -5,10 +5,10 @@ const FontSwitcher = ({ switchFontSize, theme }) => {
 
   return (
     <Switcher>
-      <Switch size='sm' onClick={switchFontSize('sm')}>A</Switch>
-      <Switch size='md' onClick={switchFontSize('md')}>A</Switch>
-      <Switch size='lg' onClick={switchFontSize('lg')}>A</Switch>
-      <Switch size='xl' onClick={switchFontSize('xl')}>A</Switch>
+      <Switch size='sm' onClick={switchFontSize('sm')}>SM</Switch>
+      <Switch size='md' onClick={switchFontSize('md')}>MD</Switch>
+      <Switch size='lg' onClick={switchFontSize('lg')}>LG</Switch>
+      <Switch size='xl' onClick={switchFontSize('xl')}>XL</Switch>
     </Switcher>
   )
 }

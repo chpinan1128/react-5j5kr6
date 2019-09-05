@@ -24,7 +24,7 @@ const Switcher = styled.div`
 const Switch = styled.span`
   margin: 0.25rem;
   cursor: pointer;
-  font-size: ${({ size, theme = {} }) => size * theme.switcherFontSize}px;
+  font-size: ${({ size, theme = {} }) => size * theme.fontSize}px;
   text-decoration: ${({ theme = {}, size }) => (theme.size === size ? "underline" : "none")};
 
   &:hover {

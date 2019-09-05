@@ -3,7 +3,7 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import { render } from 'react-dom';
 import FontSwitcher from './FontSwitcher';
 import Menu from './Menu';
-import { defaultTheme, fontSizes } from './theme'
+import { defaultTheme, fontSizes, colors } from './theme'
 import Others from './Others';
 import './style.scss';
 
@@ -13,13 +13,13 @@ const AppContainer = styled.div`
 
 class App extends React.Component {
   state = {
-    size: defaultTheme.s
+    size: 'sm'
   };
 
   respondTo = (...args) => {
     const { size } = this.state;
     return css`
-      @media (min-width: ${defaultTheme.desktop * size}px) {
+      @media (min-width: ${defaultTheme.desktop * defaultTheme.breakpoints[size]}px) {
         ${css(...args)};
       }
     `;
@@ -31,9 +31,18 @@ class App extends React.Component {
 
   get theme() {
     const { size } = this.state;
-    const theme = { ...defaultTheme, respondTo: this.respondTo, size, ...fontSizes };
+    const theme = {
+      ...defaultTheme,
+      respondTo: this.respondTo,
+      size,
+    };
+    // override font sizes
     Object.keys(fontSizes).forEach(key => {
-      theme[key] = fontSizes[key] * size;
+      theme[key] = fontSizes[key] * theme.breakpoints[size];
+    })
+    // override background colors
+    Object.keys(colors).forEach(key => {
+      theme[key] = colors[key][size];
     })
 
     return theme;

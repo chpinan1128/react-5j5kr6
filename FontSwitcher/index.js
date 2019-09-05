@@ -2,13 +2,13 @@ import React from 'react'
 import styled, { withTheme } from 'styled-components'
 
 const FontSwitcher = ({ switchFontSize, theme }) => {
-  const { s, m, l, xl } = theme;
+
   return (
     <Switcher>
-      <Switch size={s} onClick={switchFontSize(s)}>A</Switch>
-      <Switch size={m} onClick={switchFontSize(m)}>A</Switch>
-      <Switch size={l} onClick={switchFontSize(l)}>A</Switch>
-      <Switch size={xl} onClick={switchFontSize(xl)}>A</Switch>
+      <Switch size='sm' onClick={switchFontSize('sm')}>A</Switch>
+      <Switch size='md' onClick={switchFontSize('md')}>A</Switch>
+      <Switch size='lg' onClick={switchFontSize('lg')}>A</Switch>
+      <Switch size='xl' onClick={switchFontSize('xl')}>A</Switch>
     </Switcher>
   )
 }
@@ -24,8 +24,12 @@ const Switcher = styled.div`
 const Switch = styled.span`
   margin: 0.25rem;
   cursor: pointer;
-  font-size: ${({ size, theme = {} }) => size * theme.switcherFontSize}px;
-  text-decoration: ${({ theme = {}, size }) => (theme.size === size ? "underline" : "none")};
+  ${({ size, theme = {} }) => {
+    return `
+      font-size: ${theme.breakpoints[size] * theme.switcherFontSize}px
+      text-decoration:${(theme.size === size ? "underline" : "none")}
+    `
+  }}
 
   &:hover {
     text-decoration: underline;

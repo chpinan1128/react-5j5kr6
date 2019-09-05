@@ -17,11 +17,16 @@ const MenuContainer = styled.div`
   display: flex;
   justify-content: center;
 
+  ${({ theme }) => {
+    return `
+      background: ${theme.menuColor}
+    `;
+  }}
+
   ${({ theme }) =>
     theme.respondTo &&
     theme.respondTo`
 		display: block;
-    background: lightgreen
 	`};
 `;
 

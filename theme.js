@@ -7,7 +7,7 @@ export const fontSizes = {
   size4: 9,
 }
 
-export const theme = {
+export const defaultTheme = {
   desktop: 320,
   s: 1,
   m: 1.5,

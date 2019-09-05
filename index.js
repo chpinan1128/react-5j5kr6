@@ -3,7 +3,7 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import { render } from 'react-dom';
 import FontSwitcher from './FontSwitcher';
 import Menu from './Menu';
-import { theme as defaultTheme, fontSizes } from './theme'
+import { defaultTheme, fontSizes } from './theme'
 import Others from './Others';
 import './style.scss';
 

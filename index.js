@@ -9,13 +9,6 @@ import './style.scss';
 
 const AppContainer = styled.div`
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSize}px;
-
-  ${({ theme }) =>
-    theme.respondTo &&
-    theme.respondTo`
-		font-size: ${theme.fontSize * theme.size || 1}px;
-	`};
 `;
 
 class App extends React.Component {

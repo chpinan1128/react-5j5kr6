@@ -44,7 +44,9 @@ class App extends React.Component {
     Object.keys(colors).forEach(key => {
       theme[key] = colors[key][size];
     })
-
+    
+    // change body background color for different zoom levels
+    document.body.style.background = theme.mainBackground;
     return theme;
   }
 

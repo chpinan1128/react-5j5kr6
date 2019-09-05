@@ -17,16 +17,16 @@ export const fontSizes = {
 
 export const colors = {
   menuColor: {
-    sm: '#7FFF00',
-    md: '#00FF00',
-    lg: '#228B22',
-    xl: '#006400',
+    sm: '#006400',
+    md: '#228B22',
+    lg: '#00FF00',
+    xl: '#7FFF00',
   },
   mainBackground: {
-    sm: '#7FFF00',
-    md: '#00FF00',
-    lg: '#228B22',
-    xl: '#006400',
+    sm: '#696969',
+    md: '#C0C0C0',
+    lg: '#DCDCDC',
+    xl: 'white',
   }
 }
 
